@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7fc470a1-286f-4360-ab34-5292c3cb0de6" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Thymeleaf" />
+        <option value="Interface" />
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2yZIhODVbySACvhstIb9UkDyDCH" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MosiApplication.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.MosiApplicationTests.testUpdateStepAndShift.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/KDT/projects/real_bbs/src/main/resources/templates/postBoards",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "File.Encoding"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\KDT\projects\real_bbs\src\main\resources\templates\postBoards" />
+      <recent name="C:\KDT\projects\real_bbs\src\main\resources\templates\postBoards\old_bak" />
+      <recent name="C:\KDT\projects\real_bbs\src\main\resources\templates\fragments" />
+      <recent name="C:\KDT\projects\real_bbs\src\main\resources\static\js" />
+      <recent name="C:\KDT\projects\real_bbs\src\main\resources\static\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\study\project\fiBbs\src\main\resources\static\js\vendor" />
+      <recent name="C:\KDT\projects\fiBbs\src\main\resources\templates" />
+      <recent name="C:\KDT\projects\fiBbs\src\main\resources\static\css" />
+      <recent name="C:\KDT\projects\fiBbs\src\main\resources\static\img" />
+      <recent name="D:\study\project\finalBbs\src\main\resources\templates\csr\bbs" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.KDT.mosi.domain.board.bbsUpload.dao" />
+      <recent name="com.KDT.mosi.domain.board.bbsUpload.svc" />
+      <recent name="com.KDT.mosi.web" />
+      <recent name="com.KDT.mosi.web.form.rbbsReport" />
+      <recent name="com.KDT.mosi.domain.rbbsLike.dao" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MosiApplication">
+    <configuration name="MosiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.KDT.mosi.MosiApplication" />
+      <module name="mosi.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.KDT.mosi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MosiApplicationTests.testUpdateStepAndShift" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mosi.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.KDT.mosi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.KDT.mosi" />
+      <option name="MAIN_CLASS_NAME" value="com.KDT.mosi.MosiApplicationTests" />
+      <option name="METHOD_NAME" value="testUpdateStepAndShift" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="momo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="momo" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MosiApplication" />
+        <item itemvalue="JUnit.MosiApplicationTests.testUpdateStepAndShift" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7fc470a1-286f-4360-ab34-5292c3cb0de6" name="Changes" comment="" />
+      <created>1750035787688</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750035787688</updated>
+    </task>
+    <servers />
+  </component>
+</project>
