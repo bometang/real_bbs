@@ -5,37 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fc470a1-286f-4360-ab34-5292c3cb0de6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/web/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/community_list_bak.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer_bak.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header_bak.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bbs/bbs_list/icon_search.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsUpload/dao/BbsUploadDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsUpload/dao/BbsUploadDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsUpload/dao/BbsUploadDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsUpload/dao/BbsUploadDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsUpload/svc/BbsUploadSVC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsUpload/svc/BbsUploadSVC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsUpload/svc/BbsUploadSVCImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsUpload/svc/BbsUploadSVCImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/web/controller/board/ApiBbsUploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/web/controller/board/ApiBbsUploadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/web/controller/board/CsrBbsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/web/controller/board/CsrBbsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/community/community_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/css/community/community_list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/product/product_list_v2.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/css/product/product_list_v2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/community/bbs/csr/bbs_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/js/community/bbs/csr/bbs_list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/resources/templates/postBoards/bbs_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/postBoards/bbs_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/product/product_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/product/product_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsUpload/dao/BbsUploadDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsUpload/dao/BbsUploadDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsUpload/dao/BbsUploadDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsUpload/dao/BbsUploadDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsUpload/svc/BbsUploadSVC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsUpload/svc/BbsUploadSVC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsUpload/svc/BbsUploadSVCImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsUpload/svc/BbsUploadSVCImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/web/controller/board/ApiBbsUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/web/controller/board/ApiBbsUploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/web/controller/board/CsrBbsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/web/controller/board/CsrBbsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/community/community_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/community_list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/product/produc" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/community/bbs/csr/dateUtils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/community/bbs/csr/bbs_list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/community/bbs/csr/bbs_list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/postBoards/bbs_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/postBoards/bbs_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,22 +51,22 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.MosiApplication.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.MosiApplicationTests.testUpdateStepAndShift.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/KDT/projects/realBbs/src/main/java/com/KDT/mosi/web",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "File.Encoding"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MosiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.MosiApplicationTests.testUpdateStepAndShift.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/KDT/projects/realBbs/src/main/java/com/KDT/mosi/web&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\KDT\projects\realBbs\src\main\java\com\KDT\mosi\web" />
@@ -100,11 +76,11 @@
       <recent name="C:\KDT\projects\realBbs\src\main\resources\static\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\study\project\realBbs\src\main\resources\static\img\bbs\bbs_list" />
+      <recent name="D:\study\project\realBbs\src\main\resources\static\img\product\product_list" />
       <recent name="D:\study\project\fiBbs\src\main\resources\static\js\vendor" />
       <recent name="C:\KDT\projects\fiBbs\src\main\resources\templates" />
       <recent name="C:\KDT\projects\fiBbs\src\main\resources\static\css" />
-      <recent name="C:\KDT\projects\fiBbs\src\main\resources\static\img" />
-      <recent name="D:\study\project\finalBbs\src\main\resources\templates\csr\bbs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.KDT.mosi.web.controller.board" />
