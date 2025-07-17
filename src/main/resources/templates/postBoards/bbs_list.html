@@ -10,9 +10,6 @@
   <link rel="stylesheet" th:href="@{/css/layout.css}">
   <link rel="stylesheet" th:href="@{/css/common.css}">
 
-  <!-- 페이지 전용 스타일 -->
-  <link rel="stylesheet" th:href="@{/css/sellerpage/sellerMypageHome.css}">
-  <link rel="stylesheet" th:href="@{/css/product/product_managing.css}">
   <link rel="stylesheet" th:href="@{/css/community/community_list.css}">
 </head>
 <body>
@@ -38,19 +35,13 @@
     <!-- ---------- 본문 영역 ---------- -->
     <section class="content">
       <section class="post-section">
-        <h2>게시글</h2>
-
+        <h2>자유 게시판</h2>
+        <hr>
         <!-- 검색바 -->
         <div class="post-search">
-          <select name="category" id="category-select" aria-label="카테고리 선택">
-            <option value="all">전체 검색</option>
-            <option value="지역">지역</option>
-            <option value="반려동물">반려동물</option>
-            <option value="맛집">맛집</option>
-            <option value="문화/역사">문화/역사</option>
-            <option value="계절/자연">계절/자연</option>
-            <option value="실버/교통약자">실버/교통약자</option>
-          </select>
+              <select id="bcategory" name="bcategory">
+                <option value="">전체 검색</option>
+              </select>
           <input type="text" id="keyword-input" placeholder="제목을 입력해주세요" />
           <button id="search-btn" type="button">검색</button>
         </div>
@@ -67,10 +58,10 @@
         <tr>
           <th>No.</th>
           <th>카테고리</th>
+          <th>썸네일</th>
           <th>제목</th>
           <th>작성자</th>
           <th>작성일</th>
-          <th>수정일</th>
           <th>조회수</th>
         </tr>
         </thead>

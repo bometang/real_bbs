@@ -17,12 +17,16 @@ public class CsrBbsController {
   final private BbsSVC bbsSVC;
 
   @GetMapping
-  public String bbs() {
+  public String bbs(Model model,HttpSession session) {
+    Member loginMember = (Member) session.getAttribute("loginMember");
+    model.addAttribute("user", loginMember);
     return "/postBoards/allForm_v2";
   }
 
   @GetMapping("/community")
-  public String community() {
+  public String community(Model model,HttpSession session) {
+    Member loginMember = (Member) session.getAttribute("loginMember");
+    model.addAttribute("user", loginMember);
     return "/postBoards/bbs_list";
   }
 
@@ -30,10 +34,12 @@ public class CsrBbsController {
   @GetMapping("/{id}")
   public String findById(
       @PathVariable("id") Long id,
-      Model model
+      Model model,
+      HttpSession session
   ){
     model.addAttribute("bbsId", id);
-
+    Member loginMember = (Member) session.getAttribute("loginMember");
+    model.addAttribute("user", loginMember);
     return "/postBoards/detailForm";
   }
 
@@ -48,8 +54,10 @@ public class CsrBbsController {
 
   // 게시글 답글
   @GetMapping("/add/{id}")
-  public String updateForm(@PathVariable("id") Long id, Model model) {
+  public String updateForm(@PathVariable("id") Long id, Model model,HttpSession session) {
     model.addAttribute("bbsId", id);
+    Member loginMember = (Member) session.getAttribute("loginMember");
+    model.addAttribute("user", loginMember);
     return "postBoards/write_quill";
   }
 
