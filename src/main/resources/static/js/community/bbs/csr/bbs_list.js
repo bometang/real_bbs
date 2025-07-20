@@ -120,7 +120,7 @@ $list.innerHTML = rows;
       tr.addEventListener('click', async () => {
         const id = tr.dataset.pid;
         await ajax.get(`/api/bbs/${id}/view`);
-        window.location.href = `/bbs/${id}`;
+        window.location.href = `/bbs/community/${id}`;
       });
     }
   });

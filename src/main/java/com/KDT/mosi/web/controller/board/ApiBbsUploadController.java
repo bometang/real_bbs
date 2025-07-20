@@ -68,13 +68,13 @@ public class ApiBbsUploadController {
       value = "/images",
       consumes = MediaType.MULTIPART_FORM_DATA_VALUE
   )
-  public ResponseEntity<List<UploadResult>> uploadInline(
+  public ResponseEntity<ApiResponse<List<UploadResult>>> uploadInline(
       @RequestParam(value="uploadGroup", required=false) Long uploadGroup,
       @RequestParam("files") List<MultipartFile> files
   ) {
     if (files == null || files.isEmpty()) return ResponseEntity.badRequest().build();
     List<UploadResult> results = bbsUploadSVC.saveAll(uploadGroup, "INLINE", files);
-    return ResponseEntity.status(HttpStatus.CREATED).body(results);
+    return ResponseEntity.status(HttpStatus.CREATED).body(ApiResponse.of(ApiResponseCode.SUCCESS, results));
   }
 
   /**
@@ -132,7 +132,7 @@ public class ApiBbsUploadController {
    * 게시글의 첫 번째 본문 이미지(썸네일) 반환
    */
   @GetMapping("/{bbsId}/thumbnail")
-  public ResponseEntity<ApiResponse<UploadResult>> getThumbnail(@PathVariable Long bbsId) {
+  public ResponseEntity<ApiResponse<UploadResult>> getThumbnail(@PathVariable("bbsId") Long bbsId) {
     return bbsUploadSVC.findThumbnail(bbsId, "ATTACHMENT")
         .map(th -> ResponseEntity.ok(ApiResponse.of(ApiResponseCode.SUCCESS, th)))
         .orElseGet(() -> ResponseEntity.ok(ApiResponse.of(ApiResponseCode.NO_DATA, null)));

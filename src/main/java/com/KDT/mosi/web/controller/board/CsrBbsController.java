@@ -27,11 +27,11 @@ public class CsrBbsController {
   public String community(Model model,HttpSession session) {
     Member loginMember = (Member) session.getAttribute("loginMember");
     model.addAttribute("user", loginMember);
-    return "/postBoards/bbs_list";
+    return "postBoards/bbs_list";
   }
 
   //게시글조회
-  @GetMapping("/{id}")
+  @GetMapping("/community/{id}")
   public String findById(
       @PathVariable("id") Long id,
       Model model,
@@ -40,10 +40,10 @@ public class CsrBbsController {
     model.addAttribute("bbsId", id);
     Member loginMember = (Member) session.getAttribute("loginMember");
     model.addAttribute("user", loginMember);
-    return "/postBoards/detailForm";
+    return "postBoards/detailForm";
   }
 
-  @GetMapping("/add")
+  @GetMapping("/community/add")
   public String bbsAdd(
       HttpSession session
       ,Model model) {
@@ -53,7 +53,7 @@ public class CsrBbsController {
   }
 
   // 게시글 답글
-  @GetMapping("/add/{id}")
+  @GetMapping("/community/add/{id}")
   public String updateForm(@PathVariable("id") Long id, Model model,HttpSession session) {
     model.addAttribute("bbsId", id);
     Member loginMember = (Member) session.getAttribute("loginMember");

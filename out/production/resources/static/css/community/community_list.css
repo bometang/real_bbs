@@ -375,3 +375,12 @@
   color: white;
   border-radius: 4px;
 }
+
+.ql-editor p.inline-image {
+  display:inline-block;
+  margin:0;
+  padding:0;
+  line-height:0;
+  width:auto;
+}
+

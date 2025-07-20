@@ -1,4 +1,4 @@
-import { ajax,  PaginationUI} from '/js/common.js';
+import { ajax,  PaginationUI} from '/js/community/bbs/common.js';
 let currentPage = 1; // 현재 페이지를 위한 전역 변수
 let initialPage = 1; // 게시글 추가 후 이동할 페이지 (1페이지)
 

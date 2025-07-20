@@ -13,6 +13,12 @@ spring:
     openai:
       api-key: ${OPENAI_API_KEY}
 
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 20MB
+      file-size-threshold: 0B
+
 # 웹서버 포트
 server:
   port: 9090
@@ -29,3 +35,4 @@ logging:
 upload:
   path: C:\KDT\projects\uploads\bbs
   url-prefix: /static/uploads
+
