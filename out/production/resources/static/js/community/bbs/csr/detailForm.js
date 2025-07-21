@@ -309,6 +309,7 @@ async function displayReadForm() {
       <div>
           <label for="bcontent">내용</label>
           <textarea id="bcontent" name="bcontent" readonly>${postBoard.bcontent}</textarea>
+          <div class="bbs-body quill-content" th:utext="${postBoard.bcontent}">
           <span class="field-error client" id="errBContent"></span>
       </div>
       <div class='btns'></div>

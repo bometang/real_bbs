@@ -500,6 +500,8 @@ public class BbsDAOImpl implements BbsDAO {
     sql.append("where b.member_id = :memberId ");
     sql.append("and b.status = 'B0203' ");
     sql.append("and NVL(b.pbbs_id, 0) = NVL(:pbbsId, 0) ");
+    sql.append("ORDER BY b.update_date DESC ");
+    sql.append("FETCH FIRST 1 ROWS ONLY ");
 
     Long safePbbsId = (pbbsId != null) ? pbbsId : 0L;
 

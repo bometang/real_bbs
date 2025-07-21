@@ -9,5 +9,4 @@ public class MosiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MosiApplication.class, args);
 	}
-
 }

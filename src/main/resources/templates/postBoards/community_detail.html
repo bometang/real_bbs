@@ -1,0 +1,88 @@
+<!-- src/main/resources/templates/bbs/bbs_detail.html -->
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <title th:text="${bbs.title}">게시글</title>
+
+  <!-- 공통 스타일 -->
+  <link rel="stylesheet" th:href="@{/css/layout.css}">
+  <link rel="stylesheet" th:href="@{/css/common.css}">
+
+  <link rel="stylesheet" th:href="@{/css/community/community_detail.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.8/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
+</head>
+
+<body th:attr="data-parent-id=${bbs.bbsId}">
+<header th:replace="~{fragments/header :: header}"></header>
+<!-- ========================= MAIN LAYOUT ========================= -->
+
+<div class="page-container">
+  <main class="mypage-container">
+    <!-- ---------- 사이드바 ---------- -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <nav class="mypage-nav">
+          <div class="nav-title active">커뮤니티</div>
+          <ul>
+            <li><a th:href="@{/review}">리뷰</a></li>
+            <li><a th:href="@{/bbs/community}">자유 게시판</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+
+    <!-- ---------- 본문 영역 ---------- -->
+    <section class="content">
+<!--            <div class="board" th:id="${bbs.bbsId}">게시글</div>-->
+      <section class="post-section">
+        <h2>게시글</h2>
+        <hr>
+        <div>
+          <span>커뮤니티 &gt; 자유 게시판</span>
+  <!--              <th:block th:if="${#authentication.principal.member.memberId == bbs.memberId}">-->
+          <th:block th:if="${user.memberId == bbs.memberId}">
+          <button id="btn-edit" class="btn-post-edit" type="button">수정</button>
+          <button id="btn-del" class="btn-post-delete" type="button">삭제</button>
+          </th:block>
+          <th:block th:unless="${user.memberId == bbs.memberId}">
+            <button id="btn-reply" class="btn-post-reply" type="button">답글</button>
+          </th:block>
+        </div>
+      </section>
+
+      <div class="contentAll">
+
+        <div class="contentHeader">
+          <p class="meta-item"><b>no. </b> <span th:text="${bbs.bbsId}">123</span></p>
+          <p class="meta-item"><span th:text="${bbs.title}">게시글 제목</span></p>
+          <p class="meta-item contentCategory"><span th:text="${bbs.bcategory}">[카테고리]</span></p>
+          <div class="contentInfo">
+            <img class="profile-pic" th:src="@{/img/bbs/bbs_detail/profile-pic.png.png}" th:alt="${bbs.nickname}">
+            <div class="info-text">
+              <span class="nickname" th:text="${bbs.nickname}">닉네임</span>
+              <span class="meta">작성일: </span> <span th:text="${#dates.format(bbs.createDate, 'yyyy.MM.dd HH:mm')}">2025.07.02 09:58</span>
+              <span class="meta">수정일: </span> <span th:text="${#dates.format(bbs.updateDate, 'yyyy.MM.dd HH:mm')}">2025.07.02 09:58</span>
+            </div>
+            <button class="btn-report">
+              <i class="fa fa-flag"></i> 신고
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </section>
+  </main>
+</div>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+
+<!-- ===== 기능 통합 JS ===== -->
+    <script type="module" src="/js/community/bbs/csr/community_detail.js"></script>
+</body>
+</html>

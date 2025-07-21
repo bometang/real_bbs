@@ -6,6 +6,7 @@ import com.KDT.mosi.domain.entity.board.UploadResult;
 import com.KDT.mosi.web.api.ApiResponse;
 import com.KDT.mosi.web.api.ApiResponseCode;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -25,7 +26,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
-
+@Slf4j
 @RestController
 @RequestMapping("/api/bbs/upload")
 @RequiredArgsConstructor
@@ -38,27 +39,30 @@ public class ApiBbsUploadController {
   private String urlPrefix;
 
   @GetMapping("/{bbsId}/images")
-  public ResponseEntity<List<UploadResult>> getInlineImages(@PathVariable("bbsId") Long bbsId) {
+  public ResponseEntity<ApiResponse<List<UploadResult>>> getInlineImages(@PathVariable("bbsId") Long bbsId) {
     List<UploadResult> images = bbsUploadSVC.findInlineByBbsIdOrderBySort(bbsId)
         .stream()
         .map(u -> new UploadResult(
             u.getUploadId(),
             urlPrefix + "/" + u.getSavedName(),   // ★ 수정
-            u.getUploadGroup()))
+            u.getUploadGroup(),
+            u.getOriginalName()))
         .toList();
-    return ResponseEntity.ok(images);
+    return ResponseEntity.ok(ApiResponse.of(ApiResponseCode.SUCCESS, images));
   }
 
   @GetMapping("/{bbsId}/attachments")
-  public ResponseEntity<List<UploadResult>> getAttachments(@PathVariable("bbsId") Long bbsId) {
+  public ResponseEntity<ApiResponse<List<UploadResult>>> getAttachments(@PathVariable("bbsId") Long bbsId) {
     List<UploadResult> attachments = bbsUploadSVC.findAttachmentsByBbsIdOrderBySort(bbsId)
         .stream()
         .map(u -> new UploadResult(
             u.getUploadId(),
             urlPrefix + "/" + u.getSavedName(),   // ★ 수정
-            u.getUploadGroup()))
+            u.getUploadGroup(),
+            u.getOriginalName()))
         .toList();
-    return ResponseEntity.ok(attachments);
+    log.info("불러오기는함");
+    return ResponseEntity.ok(ApiResponse.of(ApiResponseCode.SUCCESS, attachments));
   }
 
   /**
@@ -96,20 +100,20 @@ public class ApiBbsUploadController {
    * 개별 업로드 아이템 삭제
    */
   @DeleteMapping("/del/{uploadId}")
-  public ResponseEntity<Void> deleteUpload(
+  public ResponseEntity<ApiResponse<Void>> deleteUpload(
       @PathVariable("uploadId") Long uploadId
   ) {
     bbsUploadSVC.deleteById(uploadId);
-    return ResponseEntity.noContent().build();
+    return ResponseEntity.ok(ApiResponse.of(ApiResponseCode.SUCCESS, null));
   }
 
   /**
    * 게시글의 모든 업로드 삭제
    */
   @DeleteMapping("/del/all/{bbsId}")
-  public ResponseEntity<Void> deleteAllUploads(@PathVariable("bbsId") Long bbsId) {
+  public ResponseEntity<ApiResponse<Void>> deleteAllUploads(@PathVariable("bbsId") Long bbsId) {
     bbsUploadSVC.deleteByBbsId(bbsId);
-    return ResponseEntity.noContent().build();
+    return ResponseEntity.ok(ApiResponse.of(ApiResponseCode.SUCCESS, null));
   }
 
   /**

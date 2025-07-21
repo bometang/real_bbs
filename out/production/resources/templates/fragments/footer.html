@@ -1,42 +1,54 @@
-<footer xmlns:th="http://www.thymeleaf.org"
-        th:fragment="footer"
-        class="footer">
-    <div class="footer-top">
-        <div class="footer-logo">
-            <span class="footer-logo-text">MO:SI</span>
+<footer th:fragment="footer" class="footer-fixed">
+    <!-- 상단: 회사 정보 + 고객센터 -->
+    <div style="display:flex; justify-content:space-between; flex-grow:1;">
+        <!-- 회사 정보 -->
+        <div style="flex:2;">
+            <div style="font-size:28px; font-weight:bold; margin-bottom:16px;">MO:SI</div>
+            <div style="font-size:15px; font-weight:500; margin-bottom:8px;">(주) KH정보교육원</div>
+            <div style="font-size:13px; color:#E1F5FE; margin-bottom:4px; line-height:1.5;">
+                사업자등록번호 : 111-11-1111 | KH정보교육원<br>
+                대표이사 : 허진희 | 통신판매업신고 : 2022-부산해운-1234<br>
+                주소 : 부산광역시 남구 전포대로 133, KH정보교육원
+            </div>
+            <div style="font-size:13px; color:#E0F7FA; margin-bottom:4px; line-height:1.5;">
+                관광사업자 등록번호 : 제2022-000012호 | 개인정보보호책임자 : 허진희<br>
+                ※ (주)KH정보교육원은 통신판매중개자이며, 상품·거래정보 및 거래에 대해 책임을 지지 않습니다.
+            </div>
+            <div style="font-size:13px; color:#E0F7FA;">
+                Copyright ⓒ Shinemusencat Inc. all rights reserved.
+            </div>
         </div>
-        <div class="footer-info">
-            <div class="footer-column">
-                <div class="title">(주) 샤인머스캣</div>
-                <div class="item">
-                    사업자 등록번호: 338-88-00632 | 대표: 이수영<br>
-                    소재지: (06159) 서울시 강남구 테헤란로 208<br>
-                    이메일: mosi@subsmsm.co.kr<br>
-                    대표번호: 1666-9807
-                </div>
+
+        <!-- 고객센터 및 소셜 -->
+        <div style="flex:1; min-width:240px;">
+            <div style="font-size:15px; font-weight:500; margin-bottom:8px;">고객센터</div>
+            <div style="font-size:13px; color:#E0F7FA; margin-bottom:4px; line-height:1.5;">
+                운영시간 : 평일 09시~18시<br>
+                이메일 : mosi@kh.kr
             </div>
-            <div class="footer-column">
-                <div class="title">고객센터</div>
-                <div class="item">
-                    <a href="#" style="color: white; text-decoration: none;">1:1 문의</a><br>
-                    <a href="#" style="color: white; text-decoration: none;">FAQ</a><br>
-                    <a href="#" style="color: white; text-decoration: none;">공지사항</a>
-                </div>
-            </div>
-            <div class="footer-column footer-social">
-                <div class="title">Follow us</div>
-                <a href="#"><img th:src="@{/img/Facebook.png}" alt="Facebook"></a>
-                <a href="#"><img th:src="@{/img/Instagram.jpg}" alt="Instagram"></a>
-                <a href="#"><img th:src="@{/img/Youtube.png}" alt="YouTube"></a>
+            <div style="margin-top:16px;">
+                <span style="font-size:15px; font-weight:500;">Follow us</span>
+                <span style="margin-left:12px;">
+          <a href="#" aria-label="인스타그램" style="color:#fff; margin-right:8px;">
+            <i class="fab fa-instagram fa-lg" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="페이스북" style="color:#fff; margin-right:8px;">
+            <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="유튜브" style="color:#fff; margin-right:8px;">
+            <i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+          </a>
+        </span>
             </div>
         </div>
     </div>
-    <div class="footer-bottom">
-        <div class="policy-links">
-            <span>이용약관</span> |
-            <span>개인정보처리방침</span> |
-            <span>전자금융거래 이용약관</span>
-        </div>
-        <div>&copy; Copyright ©subsmsm.co.ltd Inc. All rights reserved.</div>
+
+    <!-- 하단 링크 -->
+    <div style="border-top:1px solid #e0f7fa; padding-top:10px; font-size:13px; color:#E0F7FA; display:flex; gap:24px;">
+        <a href="#" style="color:#EBFCFF; text-decoration:underline;" aria-label="이용약관">이용약관</a>
+        <a href="#" style="color:#EBFCFF; text-decoration:underline;" aria-label="개인정보처리방침">개인정보처리방침</a>
+        <a href="#" style="color:#EBFCFF; text-decoration:underline;" aria-label="회원이용약관">회원이용약관</a>
+        <a href="#" style="color:#EBFCFF; text-decoration:underline;" aria-label="광고 및 제휴">광고/제휴</a>
+        <a href="#" style="color:#EBFCFF; text-decoration:underline;" aria-label="공지사항">공지사항</a>
     </div>
 </footer>

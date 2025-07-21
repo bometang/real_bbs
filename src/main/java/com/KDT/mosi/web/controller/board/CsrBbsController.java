@@ -2,6 +2,7 @@ package com.KDT.mosi.web.controller.board;
 
 import com.KDT.mosi.domain.board.bbs.svc.BbsSVC;
 import com.KDT.mosi.domain.entity.Member;
+import com.KDT.mosi.domain.entity.board.Bbs;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -9,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/bbs")
@@ -20,7 +23,7 @@ public class CsrBbsController {
   public String bbs(Model model,HttpSession session) {
     Member loginMember = (Member) session.getAttribute("loginMember");
     model.addAttribute("user", loginMember);
-    return "/postBoards/allForm_v2";
+    return "/postBoards/bbsHome";
   }
 
   @GetMapping("/community")
@@ -37,10 +40,12 @@ public class CsrBbsController {
       Model model,
       HttpSession session
   ){
-    model.addAttribute("bbsId", id);
+    Optional<Bbs> optionalBbs = bbsSVC.findById(id);
+    Bbs findedBbs = optionalBbs.orElseThrow();  // 찾고자하는 게시글이 없으면 NoSuchElementException 예외발생
+    model.addAttribute("bbs", findedBbs);
     Member loginMember = (Member) session.getAttribute("loginMember");
     model.addAttribute("user", loginMember);
-    return "postBoards/detailForm";
+    return "postBoards/community_detail";
   }
 
   @GetMapping("/community/add")

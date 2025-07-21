@@ -1,16 +1,5 @@
 /* community_list.css */
 
-/* 사이드바 카드 */
-/*
-.sidebar-card {
-    background-color: #FFFFFF;
-    border: 1px solid #D9D9D9;
-    border-radius: 8px;
-    padding: 0;
-    box-sizing: border-box;
-    margin-bottom: 24px;
-}
-*/
 /* 페이지 컨테이너: 헤더 높이만큼 패딩 */
 .page-container {
     padding-top: 167px;
@@ -321,6 +310,7 @@
   padding-left:3px;
 }
 
+
 .indent-icon {
   width: 16px;
   height: 16px;
@@ -383,4 +373,3 @@
   line-height:0;
   width:auto;
 }
-

@@ -39,7 +39,8 @@ async function addBbs(data) {
   data.status = 'B0201';
   const res = await ajax.post('/api/bbs', data);
   if (res.header.rtcd === 'S00') {
-    window.location.href = parentId ? `/bbs/${parentId}` : '/bbs';
+    const newId = res.body.bbsId;
+    window.location.href =`/bbs/community/${newId}`;
   } else {
     alert('저장에 실패했습니다.');
   }
@@ -50,7 +51,7 @@ async function saveDraft(data) {
   data.status = 'B0203';
   const res = await ajax.post('/api/bbs', data);
   if (res.header.rtcd === 'S00') {
-    window.location.href = '/bbs';
+    window.location.href = '/bbs/community';
   } else {
     alert('임시 저장에 실패했습니다.');
   }
@@ -90,6 +91,7 @@ async function loadAttachmentsByBbsId(bbsId) {
     if (res.header.rtcd !== 'S00' || !Array.isArray(res.body)) return;
     res.body.forEach(meta => addAttachmentItem(meta)); // UI 추가
     console.log('loadAttachmentsByBbsId 실행 성공');
+    uploadGroupInput.value = res.body[0].uploadGroup;
   } catch (err) {
     console.error('첨부파일 로드 실패', err);
     console.log('loadAttachmentsByBbsId 실행 실패');
@@ -119,7 +121,6 @@ try {
       if (parentId) {
         await loadAttachmentsByBbsId(parentId);
       }
-
       if (loadRes.header.rtcd === 'S00') {
         const draft   = loadRes.body;
         const bbsId   = draft.bbsId;
@@ -127,9 +128,11 @@ try {
         quill.root.innerHTML = loadRes.body.bcontent || '';
         categorySelect.value = loadRes.body.bcategory || '';
         if (!parentId && bbsId) {
+          console.log("첨부파일 불러오기")
           await loadAttachmentsByBbsId(bbsId);
         }
       }
+      console.log("삭제시작")
       const deleteUrl = parentId
         ? `/api/bbs/temp?pbbsId=${parentId}`
         : '/api/bbs/temp';
@@ -313,7 +316,7 @@ function validImage(file){
 }
 
 function resolveImageUrl(meta){
-  return meta.url            // ★ 맨 앞에 이 한 줄 추가
+  return meta.url
       || meta.publicUrl
       || meta.viewUrl
       || (meta.storeName ? `/static/uploads/${meta.storeName}` : null);
@@ -334,9 +337,6 @@ async function uploadInlineImage(file){
   console.log('[UPLOAD RAW RESPONSE]', res);
 
   const meta = res.body[0];
-  console.log('META RAW', meta);
-  console.log('META keys', Object.keys(meta));
-
   uploadGroupInput.value = meta.uploadGroup;
   return meta;
 }
@@ -397,7 +397,6 @@ function adjustImageParagraph(img){
     img.addEventListener('load', () => adjustImageParagraph(img), { once:true });
     return;
   }
-
   p.classList.add('inline-image');
   // 렌더된 실제 폭
   p.style.width = img.clientWidth + 'px';
