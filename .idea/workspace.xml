@@ -5,63 +5,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fc470a1-286f-4360-ab34-5292c3cb0de6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/bbsHome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/bbs_list.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/community_detail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/old/addStyles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/old/allForm_v2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/old/bbs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/old/bbsdetail.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/old/common.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/old/community_list.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/old/write_quill.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bbs/bbs_detail/profile-pic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/community/bbs/csr/community_detail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/postBoards/bbsHome.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/postBoards/community_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/postBoards/community_detail_bak.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/postBoards/write_quill_test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bbs/bbs_detail/Icon_Heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bbs/bbs_detail/Icon_Heart_fill.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bbs/bbs_detail/comment.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bbs/bbs_detail/report_begin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bbs/bbs_detail/report_filled.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbs/dao/BbsDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbs/dao/BbsDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsUpload/svc/BbsUploadSVCImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsUpload/svc/BbsUploadSVCImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/entity/board/UploadResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/entity/board/UploadResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/web/controller/board/ApiBbsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/web/controller/board/ApiBbsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/web/controller/board/ApiBbsUploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/web/controller/board/ApiBbsUploadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsLike/dao/BbsLikeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsLike/dao/BbsLikeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsLike/dao/BbsLikeDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsLike/dao/BbsLikeDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsLike/svc/BbsLikeSVC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsLike/svc/BbsLikeSVC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsLike/svc/BbsLikeSVCImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsLike/svc/BbsLikeSVCImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsReport/dao/BbsReportDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsReport/dao/BbsReportDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsReport/dao/BbsReportDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsReport/dao/BbsReportDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsReport/svc/BbsReportSVC.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsReport/svc/BbsReportSVC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsReport/svc/BbsReportSVCImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/bbsReport/svc/BbsReportSVCImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/rbbsReport/dao/RBbsReportDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/rbbsReport/dao/RBbsReportDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/rbbsReport/dao/RBbsReportDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/domain/board/rbbsReport/dao/RBbsReportDAOImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/web/controller/board/CsrBbsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/com/KDT/mosi/web/controller/board/CsrBbsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/css/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/community/addStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/css/community/addStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/community/community_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/css/community/community_list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/community/community_list_bak.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/community/write_quill.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/css/community/write_quill.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/css/layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/addStyles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/community/community_detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/css/community/community_detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/css/product/productDetail.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/img/FaceBook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/img/Instagram.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/img/Youtube.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/img/product/produc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bbs/csr/add.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bbs/csr/add_bak.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bbs/csr/allForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bbs/csr/allForm_bak.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bbs/csr/bbs_list.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bbs/csr/detailForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bbs/csr/detailForm_bak.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bbs/csr/updateForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bbs/csr/writeForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bbs/csr/writeForm_quill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bbs/csr/writeForm_quill_bak.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/bbs/csr/writeForm_quill_bak2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/community/bbs/csr/community_detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/js/community/bbs/csr/community_detail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/community/bbs/csr/detailForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/js/community/bbs/csr/detailForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/static/js/community/bbs/csr/writeForm_quill.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/static/js/community/bbs/csr/writeForm_quill.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/postBoards/bbs_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/postBoards/bbs_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/postBoards/write_quill.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/postBoards/write_quill.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/MosiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/MosiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbs/dao/BbsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbs/dao/BbsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbs/dao/BbsDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbs/dao/BbsDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsUpload/svc/BbsUploadSVCImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsUpload/svc/BbsUploadSVCImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/entity/board/UploadResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/entity/board/UploadResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/web/controller/board/ApiBbsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/web/controller/board/ApiBbsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/web/controller/board/ApiBbsUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/web/controller/board/ApiBbsUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/postBoards/addForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/postBoards/allForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/postBoards/bbs_list_bak.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/postBoards/community_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/postBoards/community_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/postBoards/write_bak.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/postBoards/write_quill_bak.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/postBoards/write_tinymce.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsLike/dao/BbsLikeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsLike/dao/BbsLikeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsLike/dao/BbsLikeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsLike/dao/BbsLikeDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsLike/svc/BbsLikeSVC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsLike/svc/BbsLikeSVC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsLike/svc/BbsLikeSVCImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsLike/svc/BbsLikeSVCImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsReport/dao/BbsReportDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsReport/dao/BbsReportDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsReport/dao/BbsReportDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsReport/dao/BbsReportDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsReport/svc/BbsReportSVC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsReport/svc/BbsReportSVC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsReport/svc/BbsReportSVCImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/bbsReport/svc/BbsReportSVCImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/rbbs/dao/RbbsDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/rbbs/dao/RbbsDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/rbbsReport/dao/RBbsReportDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/rbbsReport/dao/RBbsReportDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/rbbsReport/dao/RBbsReportDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/domain/board/rbbsReport/dao/RBbsReportDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/web/controller/board/CsrBbsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/web/controller/board/CsrBbsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/common.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/community/addStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/addStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/community/community_list.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/community_list.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/community/community_list_bak.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/old/community_list_bak.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/community/write_quill.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/write_quill.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/web/form/board/bbs/UpdateApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/KDT/mosi/web/form/board/bbs/UpdateApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/community/community_detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/community/community_detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/community/bbs/csr/community_detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/community/bbs/csr/community_detail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/community/bbs/csr/detailForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/community/bbs/csr/detailForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/community/bbs/csr/writeForm_quill.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/community/bbs/csr/writeForm_quill.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/postBoards/bbs_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/postBoards/bbs_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/postBoards/write_quill.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/postBoards/write_quill.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/postBoards/community_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/postBoards/community_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,22 +105,22 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.MosiApplication.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.MosiApplicationTests.testUpdateStepAndShift.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/KDT/projects/realBbs/src/main/java/com/KDT/mosi/web",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "File.Encoding"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MosiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.MosiApplicationTests.testUpdateStepAndShift.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/KDT/projects/realBbs/src/main/java/com/KDT/mosi/web&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\KDT\projects\realBbs\src\main\java\com\KDT\mosi\web" />

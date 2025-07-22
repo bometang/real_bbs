@@ -46,4 +46,9 @@ public class RBbsReportDAOImpl implements RBbsReportDAO {
 
     return i;
   }
+
+  @Override
+  public boolean getReport(Long rbbsId, Long memberId) {
+    return false;
+  }
 }

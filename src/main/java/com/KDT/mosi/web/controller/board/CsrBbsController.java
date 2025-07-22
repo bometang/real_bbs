@@ -1,6 +1,9 @@
 package com.KDT.mosi.web.controller.board;
 
 import com.KDT.mosi.domain.board.bbs.svc.BbsSVC;
+import com.KDT.mosi.domain.board.bbsLike.svc.BbsLikeSVC;
+import com.KDT.mosi.domain.board.bbsReport.svc.BbsReportSVC;
+import com.KDT.mosi.domain.board.rbbs.svc.RbbsSVC;
 import com.KDT.mosi.domain.entity.Member;
 import com.KDT.mosi.domain.entity.board.Bbs;
 import jakarta.servlet.http.HttpSession;
@@ -18,6 +21,9 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CsrBbsController {
   final private BbsSVC bbsSVC;
+  final private BbsReportSVC bbsReportSVC;
+  final private BbsLikeSVC bbsLikeSVC;
+  final private RbbsSVC rbbsSVC;
 
   @GetMapping
   public String bbs(Model model,HttpSession session) {
@@ -45,6 +51,24 @@ public class CsrBbsController {
     model.addAttribute("bbs", findedBbs);
     Member loginMember = (Member) session.getAttribute("loginMember");
     model.addAttribute("user", loginMember);
+
+    boolean reported = false;
+    if (loginMember != null) {
+      reported = bbsReportSVC.getReport(id, loginMember.getMemberId());
+    }
+    model.addAttribute("reported", reported);
+
+    boolean liked = false;
+    if (loginMember != null) {
+      liked = bbsLikeSVC.getLike(id, loginMember.getMemberId());
+    }
+    model.addAttribute("liked", liked);
+
+    int cnt_like = bbsLikeSVC.getTotalCountLike(id);
+    model.addAttribute("cnt_like", cnt_like);
+
+    int cnt_comment = rbbsSVC.getTotalCount(id);
+    model.addAttribute("cnt_comment", cnt_comment);
     return "postBoards/community_detail";
   }
 

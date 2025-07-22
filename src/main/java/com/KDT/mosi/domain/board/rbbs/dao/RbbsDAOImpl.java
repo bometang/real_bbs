@@ -107,7 +107,7 @@ public class RbbsDAOImpl implements RbbsDAO {
 
   @Override
   public int getTotalCount(Long bbsId) {
-    String sql = "SELECT COUNT(rbbs_id) FROM rbbs WHERE bbs_id = :bbsId AND status <> 'R0203'";
+    String sql = "SELECT COUNT(rbbs_id) FROM rbbs WHERE bbs_id = :bbsId AND status <> 'R0203' ";
     Map<String, Long> params = Map.of("bbsId", bbsId);
     return template.queryForObject(sql, params, Integer.class);
   }

@@ -100,3 +100,25 @@
     border: 1px solid #D4D4D4;
     border-radius: 5px;
 }
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;      /* 동그라미 */
+  object-fit: cover;        /* 잘라내기 */
+}
+
+.contentInfo{
+    display: flex;
+}
+
+.contentInfo .info-text{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.hidden {
+    border:1px solid #1EC4CC;
+    display:none;
+}
