@@ -33,4 +33,9 @@ public class MemberSVCImpl implements MemberSVC{
   public Optional<Member> findByEmail(String email) {
     return memberDAO.findByEmail(email);
   }
+
+  @Override
+  public int updatePic(Long memberId, byte[] pic) {
+    return memberDAO.updatePic(memberId, pic);
+  }
 }

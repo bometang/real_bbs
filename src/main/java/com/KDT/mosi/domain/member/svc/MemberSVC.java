@@ -14,4 +14,8 @@ public interface MemberSVC {
   // 회원 조회
   Optional<Member> findByMemberId(Long memberId);
   Optional<Member> findByEmail(String email);
+
+
+  int updatePic(Long memberId, byte[] pic);
+
 }

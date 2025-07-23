@@ -149,9 +149,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.location.href = `/bbs/community/add/${postBoard.bbsId}`;
     });
 
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ////////////////////////////////////////////게시글 관련////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////게시글 관련////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
     //게시글 삭제
     const delPostBoard = async pid => {
       try {
@@ -198,4 +201,399 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     };
     await loadCategories();
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////댓글 관련//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+    const $list = document.createElement('div');
+    const $commentList = document.querySelector('.comment-list');
+    $commentList.appendChild($list);
+
+    const divEle = document.createElement('div');
+    divEle.setAttribute('id','reply_pagenation');
+    $commentList.appendChild(divEle);
+
+
+    //게시글 조회
+    const getPostComment = async (pid,rbbsId) => {
+      try {
+        const url = `/api/bbs/${pid}/comments/${rbbsId}`;
+        const result = await ajax.get(url);
+        if (result.header.rtcd === 'S00') {
+          return result.body;
+
+        } else if(result.header.rtcd.substr(0,1) == 'E'){
+            for(let key in result.header.details){
+                console.log(`필드명:${key}, 오류:${result.header.details[key]}`);
+            }
+            return result.header.details;
+        } else {
+          alert(result.header.rtmsg);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+      return null;
+    };
+
+
+    //댓글 저장
+    const addPostComment = async (comment,$frm) => {
+      try {
+        const url = `/api/bbs/${pid}/comments`;
+        const result = await ajax.post(url,comment);
+        console.log(result);
+        if (result.header.rtcd === 'S00') {
+          $frm.reset();
+          initialPage = 1; // 생성 후 1페이지로 이동
+          getPostCommentList(initialPage, recordsPerPage); // 첫 페이지의 기본 레코드로 호출
+          configPagination();
+        } else if(result.header.rtcd.substr(0,1) == 'E'){
+            for(let key in result.header.details){
+                console.log(`필드명:${key}, 오류:${result.header.details[key]}`);
+            }
+        } else {
+          alert(result.header.rtmsg);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    //댓글 삭제
+    const delPostComment = async (pid, rbbsId) => {
+      try {
+        const url = `/api/bbs/${pid}/comments/${rbbsId}`;
+        const result = await ajax.delete(url);
+        if (result.header.rtcd === 'S00') {
+          getPostCommentList(currentPage, recordsPerPage);
+        } else if(result.header.rtcd.substr(0,1) == 'E'){
+            for(let key in result.header.details){
+                console.log(`필드명:${key}, 오류:${result.header.details[key]}`);
+            }
+        } else {
+          alert(result.header.rtmsg);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    //댓글 수정
+    const modifyPostComment = async (pid,rbbsId ,bcontent) => {
+      try {
+        console.log('modifyPostComment 호출, pid=', rbbsId,'cid=', pid, 'body=', bcontent);
+        const url = `/api/bbs/${pid}/comments/${rbbsId}`;
+        const result = await ajax.patch(url, { bcontent });
+        if (result.header.rtcd === 'S00') {
+           return result;
+        } else if(result.header.rtcd.substr(0,1) == 'E'){
+            for(let key in result.header.details){
+                console.log(`필드명:${key}, 오류:${result.header.details[key]}`);
+            }
+            console.log(result.header);
+            return result;
+        } else {
+          alert(result.header.rtmsg);
+        }
+      } catch (err) {
+        console.error(err.message);
+      }
+    };
+
+    //댓글목록
+    const getPostCommentList = async (reqPage, reqRec) => {
+      try {
+        const url = `/api/bbs/${pid}/comments/paging?pageNo=${reqPage}&numOfRows=${reqRec}`;
+        const result = await ajax.get(url);
+
+        if (result.header.rtcd === 'S00') {
+          currentPage = reqPage; // 현재 페이지 업데이트
+          displayPostCommentList(result.body);
+
+        } else {
+          alert(result.header.rtmsg);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    //댓글 버튼
+    async function configPagination(){
+      const url = `/api/bbs/${pid}/comments/totCnt`;
+      try {
+        const result = await ajax.get(url);
+
+        const totalRecords = result.body; // 전체 레코드수
+
+        const handlePageChange = (reqPage)=>{
+          return getPostCommentList(reqPage,recordsPerPage);
+        };
+
+        // Pagination UI 초기화
+        var pagination = new PaginationUI('reply_pagenation', handlePageChange);
+
+        pagination.setTotalRecords(totalRecords);       //총건수
+        pagination.setRecordsPerPage(recordsPerPage);   //한페이지당 레코드수
+        pagination.setPagesPerPage(pagesPerPage);       //한페이지당 페이지수
+
+        // 첫페이지 가져오기
+        pagination.handleFirstClick();
+
+      }catch(err){
+        console.error(err);
+      }
+    }
+
+    // 인라인 답글 폼
+    function showInlineReplyForm(parentCid, parentData) {
+      const existing = document.getElementById(`reply-form-${parentCid}`);
+      if (existing) { existing.querySelector('input').focus(); return; }
+
+      const $parentRow = $list.querySelector(`tr[data-cid="${parentCid}"]`);
+      const indent     = ((parentData.bindent || 0) + 1) * 20;
+      const $div = document.createElement('div');
+      $div.id = `reply-form-${parentCid}`;
+      $div.innerHTML = `
+        <div>
+          <input type="text" id="reply-input-${parentCid}" placeholder="답글을 입력하세요" style="width:70%;" />
+          <button class="btnSubmitReply">등록</button>
+          <button class="btnCancelReply">취소</button>
+          <span class="field-error client" id="errReplyContent-${parentCid}"></span>
+        </div>
+      `;
+      $parentRow.after($div);
+
+      $div.querySelector('.btnSubmitReply').onclick = async () => {
+        const $input = $div.querySelector(`#reply-input-${parentCid}`);
+        const text   = $input.value.trim();
+        const $err   = $div.querySelector(`#errReplyContent-${parentCid}`);
+        if (!text) {
+          $err.textContent = '내용은 필수 입니다';
+          $input.focus();
+          return;
+        }
+        $err.textContent = '';
+        await addPostComment({ bcontent: text, prbbsId: parentCid }, { reset: () => {} });
+        $div.remove();
+        getPostCommentList(currentPage, recordsPerPage);
+      };
+
+      $div.querySelector('.btnCancelReply').onclick = () => $div.remove();
+    }
+
+///////////////////////////////////////////////////////////////////////////////
+    //댓글목록 화면
+    async function displayPostCommentList(postComments) {
+
+      const changeCommentEditMode = async cid => {
+
+        const data = await getPostComment(pid, cid);
+        const $row       = $list.querySelector(`tr[data-cid="${cid}"]`);
+        const $btnCell   = $row.querySelector('.commentBtns');
+        const $contentTd = $row.previousElementSibling.children[1];
+        const $udateTd = $row.previousElementSibling.children[4];
+
+        $contentTd.innerHTML =
+          `<textarea id="editContent-${cid}" rows="3" style="width:98%;">${data.bcontent}</textarea>`;
+
+        $btnCell.innerHTML = `
+          <button type="button" class="btnSaveComment">저장</button>
+          <button type="button" class="btnCancelComment">취소</button>`;
+
+        $btnCell.querySelector('.btnSaveComment').onclick = async () => {
+          const newVal = $contentTd.querySelector('textarea').value.trim();
+          const res = await modifyPostComment(pid, cid, newVal);
+
+          if (res.header.rtcd.startsWith('E')) {
+            const details = res.header.details;
+            if (details.bcontent)  document.querySelector(`#errContent-${cid}`).textContent   = details.bcontent;
+            return;
+          }
+          const udate = res.body.udate;
+          $udateTd.textContent=udate;
+          document.querySelector(`#errContent-${cid}`).textContent = '';
+          changeCommentReadMode(cid);
+        };
+
+
+        $btnCell.querySelector('.btnCancelComment').onclick =
+          () => {
+          document.querySelector(`#errContent-${cid}`).textContent = '';
+          changeCommentReadMode(cid);
+          };
+      };
+
+      const changeCommentReadMode = async cid => {
+        const data = await getPostComment(pid, cid);
+        const $row       = $list.querySelector(`tr[data-cid="${cid}"]`);
+        const $btnCell   = $row.querySelector('.commentBtns');
+        const $contentTd = $row.previousElementSibling.children[1];
+
+        $contentTd.textContent = data.bcontent;
+
+        $btnCell.querySelector('.btnEditComment').onclick  = async () => {
+        const memberId = await getMemberId();
+        if(memberId !== data.memberId) {
+          alert('작성자만 수정할 수 있습니다.');
+          return;
+        }
+        changeCommentEditMode(cid);
+        }
+        $btnCell.querySelector('.btnDeleteComment').onclick =
+          async () => {
+          const memberId = await getMemberId();
+          if(memberId !== data.memberId) {
+            alert('작성자만 삭제할 수 있습니다.');
+            return;
+          }
+          if (confirm('삭제하시겠습니까?')) delPostComment(pid, cid);
+          };
+
+          // 좋아요 버튼
+          $btnCell.querySelector('.btnLikeComment').onclick = async () => {
+            await ajax.post(`/api/bbs/comments/${cid}/likes`);
+            // UI 업데이트(예: 버튼 토글, 카운트 리프레시) 로직 추가
+          };
+
+        $btnCell.querySelector('.btnReportComment').onclick = async () => {
+          // 1) 신고 사유 입력
+          const reason = prompt('신고 사유를 입력하세요:');
+          if (!reason || !reason.trim()) {
+            return alert('신고 사유가 필요합니다.');
+          }
+
+          // 2) 최종 확인
+          if (!confirm('정말 신고하시겠습니까?')) return;
+
+          // 3) POST 바디에 reason 포함
+          try {
+            const { header } = await ajax.post(
+              `/api/bbs/comments/${cid}/report`,
+              { reason }
+            );
+            alert(header.rtcd === 'S00'
+              ? '신고되었습니다.'
+              : header.rtmsg
+            );
+          } catch (err) {
+            console.error('신고 오류', err);
+            alert('신고 중 오류가 발생했습니다.');
+          }
+        };
+          // 답글 버튼
+          $btnCell.querySelector('.btnReplyComment').onclick = () => {
+            // 기존 displayForm 로직을 재활용하거나,
+            // 부모 댓글 바로 아래에 인라인 답글 폼 띄우기 함수 호출
+            showInlineReplyForm(cid, data);
+          };
+      };
+
+
+      const makeTr = postComments => {
+        // map() → 배열 of 문자열 → join() → 하나의 HTML 문자열
+        return postComments
+          .map((postComment, idx) => {
+            const indentPx = postComment.bindent * 20;
+            const canReply  = postComment.bindent < 2;
+            const canHr = postComment.step === 0 && idx >0;
+            const canDel = true;
+//            const canDel    = postComment.memberId === loginMemberId;
+
+            // 첫 댓글 위에는 <hr> 넣지 않기 위해 idx > 0 검사
+            return `
+              ${canHr ? '<hr>' : ''}
+              <div
+                id="comment-${postComment.rbbsId}"
+                style="padding-left: ${indentPx}px;"
+              >
+                <div class="profile">
+                  <img
+                    class="profile-pic"
+                    src="${postComment.picData || '/img/bbs/bbs_detail/profile-pic.png'}"
+                    alt="${postComment.nickname}"
+                  >
+                </div>
+                <div class="comment-info">
+                  <div>
+                    <span>${postComment.nickname}</span>
+                    <button
+                      type="button"
+                      class="btnReplyComment${canReply ? '' : ' hidden'}"
+                      data-rbbs-id="${postComment.rbbsId}"
+                    >
+                      답글
+                    </button>
+                  </div>
+                  <span>${postComment.bcontent}</span>
+                  <div>
+                    <span>${postComment.updateDate}</span>
+                    <button type="button" class="btnLikeComment" data-rbbs-id="${postComment.rbbsId}">
+                      <img
+                        src="${
+                          postComment.liked
+                            ? '/img/bbs/bbs_detail/Icon_Heart_fill.png'
+                            : '/img/bbs/bbs_detail/Icon_Heart.png'
+                        }"
+                        alt="좋아요"
+                      >
+                    </button>
+                  </div>
+                </div>
+                <div class="comment_btns">
+                  <button
+                    type="button"
+                    class="btnDelComment${canDel ? '' : ' hidden'}"
+                    data-rbbs-id="${postComment.rbbsId}"
+                  >
+                    삭제
+                  </button>
+                  <button type="button" class="btnReportComment" data-rbbs-id="${postComment.rbbsId}">신고</button>
+                </div>
+              </div>
+              <div class="replyComment"></div>
+            `;
+          })
+          .join('');
+      };
+      $list.innerHTML = makeTr(postComments);
+
+      // 이벤트 위임
+      $list.addEventListener('click', async e => {
+        const btn = e.target.closest('button[data-rbbs-id]');
+        if (!btn) return;
+        const rbbsId = btn.dataset.rbbsId;
+
+        if (btn.classList.contains('btnReplyComment')) {
+          // 답글 클릭 시
+          console.log('reply', rbbsId);
+          // showReplyForm(rbbsId);
+        }
+        else if (btn.classList.contains('btnLikeComment')) {
+          // 좋아요 클릭 시
+          console.log('like', rbbsId);
+          // toggleLike(rbbsId);
+        }
+        else if (btn.classList.contains('btnDelComment')) {
+          // 삭제 클릭 시
+          console.log('delete', rbbsId);
+          const memberId = await getMemberId();
+            if(memberId !== data.memberId) {
+              alert('작성자만 삭제할 수 있습니다.');
+              return;
+            }
+            if (confirm('삭제하시겠습니까?')) delPostComment(pid, cid);
+        }
+        else if (btn.classList.contains('btnReportComment')) {
+          // 신고 클릭 시
+          console.log('report', rbbsId);
+
+        }//신고버튼 클릭시
+      });
+
+    };
+    configPagination();
+
 });

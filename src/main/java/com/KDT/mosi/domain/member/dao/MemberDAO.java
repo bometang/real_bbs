@@ -30,4 +30,8 @@ public interface MemberDAO {
    * @param email
    * @return 회원정보
    */
-  Optional<Member> findByEmail(String email);}
+  Optional<Member> findByEmail(String email);
+
+  int updatePic(Long memberId, byte[] pic);
+
+}

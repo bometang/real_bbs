@@ -300,6 +300,7 @@ public class BbsDAOImpl implements BbsDAO {
     sql.append("END AS title, ");
     sql.append("NVL(m.member_id, 0) AS member_id, ");
     sql.append("m.nickname as nickname, ");
+    sql.append("m.pic as pic, ");
     sql.append("b.hit AS hit, ");
     sql.append("CASE ");
     sql.append("WHEN b.status = 'B0202' THEN to_clob('삭제된 게시글입니다.') ");

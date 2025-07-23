@@ -52,6 +52,14 @@ public class CsrBbsController {
     Member loginMember = (Member) session.getAttribute("loginMember");
     model.addAttribute("user", loginMember);
 
+    // Base64로 변환하여 data URI 스킴으로 넘기기
+    if (findedBbs.getPic() != null) {
+      String base64 = java.util.Base64
+          .getEncoder()
+          .encodeToString(findedBbs.getPic());
+      model.addAttribute("picData", "data:image/jpeg;base64," + base64);
+    }
+
     boolean reported = false;
     if (loginMember != null) {
       reported = bbsReportSVC.getReport(id, loginMember.getMemberId());

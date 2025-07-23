@@ -3,7 +3,7 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
-  <title th:text="${bbs.title}">게시글</title>
+  <title th:text="${'Mo:Si  ' + bbs.title}">게시글</title>
 
   <!-- 공통 스타일 -->
   <link rel="stylesheet" th:href="@{/css/layout.css}">
@@ -41,7 +41,7 @@
         <hr>
         <div>
           <span>커뮤니티 &gt; 자유 게시판</span>
-          <th:block th:if="${user?.memberId == bbs.memberId}">
+          <div th:classappend="${user?.memberId != bbs.memberId} ? ' hidden' : ''">
             <div class="btn-area view-mode">
               <button id="btn-edit" class="btn-post-edit" type="button">수정</button>
               <button id="btn-del" class="btn-post-delete" type="button">삭제</button>
@@ -50,7 +50,7 @@
               <button id="btn-save"    class="btn-post-save"   type="button">저장</button>
               <button id="btn-cancel"  class="btn-post-cancel" type="button">취소</button>
             </div>
-          </th:block>
+          </div>
           <button id="btn-reply" class="btn-post-reply" type="button" th:if="${user.memberId != bbs.memberId and bbs.bindent < 2}">답글</button>
         </div>
       </section>
@@ -62,7 +62,15 @@
           <p class="meta-item"><span th:text="${bbs.title}">게시글 제목</span></p>
           <p class="meta-item contentCategory"><span th:text="${bbs.bcategory}">[카테고리]</span></p>
           <div class="contentInfo">
-            <img class="profile-pic" th:src="@{/img/bbs/bbs_detail/profile-pic.png}" th:alt="${bbs.nickname}">
+            <img class="profile-pic"
+                 th:if="${picData != null}"
+                 th:src="${picData}"
+                 th:alt="${bbs.nickname}" />
+
+            <img class="profile-pic"
+                 th:if="${picData == null}"
+                 th:src="@{/img/bbs/bbs_detail/profile-pic.png}"
+                 th:alt="${bbs.nickname}" />
             <div class="info-text">
               <span class="nickname" th:text="${bbs.nickname}">닉네임</span>
               <span class="nickname" th:text="${'조회수 '+bbs.hit}">조회수</span>

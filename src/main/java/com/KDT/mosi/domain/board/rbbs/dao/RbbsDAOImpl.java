@@ -64,6 +64,7 @@ public class RbbsDAOImpl implements RbbsDAO {
     StringBuffer sql = new StringBuffer();
     sql.append("SELECT r.rbbs_id as rbbs_id, r.bbs_id as bbs_id, r.status as status, r.prbbs_id as prbbs_id, r.member_id as member_id, ")
         .append("m.nickname as nickname, ")
+        .append("m.pic as pic, ")
         .append("CASE ")
         .append("WHEN r.status = 'R0202' THEN to_clob('삭제된 게시글입니다.') ")
         .append("ELSE r.bcontent ")
@@ -84,6 +85,7 @@ public class RbbsDAOImpl implements RbbsDAO {
     StringBuffer sql = new StringBuffer();
     sql.append("SELECT r.rbbs_id as rbbs_id, r.bbs_id as bbs_id, r.status as status, r.prbbs_id as prbbs_id, r.member_id as member_id, ")
         .append("m.nickname as nickname, ")
+        .append("m.pic as pic, ")
         .append("CASE ")
         .append("WHEN r.status = 'R0202' THEN to_clob('삭제된 게시글입니다.') ")
         .append("ELSE r.bcontent ")

@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -23,8 +24,8 @@ public class MemberDAOImpl implements MemberDAO{
   public Member insertMember(Member member) {
     // 1) sql 준비
     StringBuffer sql = new StringBuffer();
-    sql.append("insert into member (member_id,nickname,email,passwd) ");
-    sql.append("values(member_member_id_seq.nextval,:nickname,:email,:passwd) ");
+    sql.append("INSERT INTO member (member_id, nickname, email, passwd, pic) ");
+    sql.append("\"VALUES (member_member_id_seq.nextval, :nickname, :email, :passwd, :pic) ");
 
     // 2) sql 실행
     SqlParameterSource param = new BeanPropertySqlParameterSource(member);
@@ -98,5 +99,19 @@ public class MemberDAOImpl implements MemberDAO{
       return Optional.empty();
 
     }
+  }
+
+  @Override
+  public int updatePic(Long memberId, byte[] pic) {
+    String sql = ""
+        + "UPDATE member "
+        + "   SET pic = :pic "
+        + " WHERE member_id = :memberId";
+
+    MapSqlParameterSource params = new MapSqlParameterSource()
+        .addValue("pic", pic)
+        .addValue("memberId", memberId);
+
+    return template.update(sql, params);
   }
 }
